@@ -1,0 +1,161 @@
+/* ==========================================
+   BOOK CARD
+========================================== */
+
+.book-card {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 150px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-strong);
+    box-shadow: var(--card-shadow);
+}
+
+
+/* ==========================================
+   BOOK CONTENT
+========================================== */
+
+.book-card-content {
+    text-align: left;
+    width: 100%;
+}
+
+.book-card-content h3 {
+    margin: 0 0 10px;
+    color: var(--text-primary);
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.book-card-author {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.book-card-author span {
+    color: var(--text-secondary);
+}
+
+
+/* ==========================================
+   ACTIONS
+========================================== */
+
+.book-card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-top: 22px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+}
+
+.book-card-actions button {
+    height: 35px;
+    padding: 0 11px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+/* ==========================================
+   VIEW DETAILS
+========================================== */
+
+.view-details-btn {
+    border: 1px solid var(--primary);
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.view-details-btn:hover {
+    opacity: 0.9;
+}
+
+
+/* ==========================================
+   EDIT
+========================================== */
+
+.edit-btn {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-primary);
+}
+
+.edit-btn:hover {
+    background: var(--surface-secondary);
+    border-color: var(--border-strong);
+}
+
+
+/* ==========================================
+   DELETE
+========================================== */
+
+.delete-btn {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: #dc2626;
+}
+
+.delete-btn:hover {
+    background: #fef2f2;
+    border-color: #fecaca;
+}
+
+html[data-theme="dark"] .delete-btn {
+    color: #fca5a5;
+}
+
+html[data-theme="dark"] .delete-btn:hover {
+    background: #3b1f24;
+    border-color: #7f1d1d;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 550px) {
+
+    .book-card {
+        padding: 16px;
+    }
+
+    .book-card-actions {
+        flex-wrap: wrap;
+    }
+
+}

@@ -1,0 +1,438 @@
+
+/* ==========================================
+   BOOKS PAGE
+========================================== */
+
+.books-page {
+    width: 100%;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.books-page-header {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 25px;
+}
+
+.books-page-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    text-align: left;
+}
+
+.books-page-header h1 {
+    margin: 0;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    color: var(--text-primary);
+
+    text-align: left;
+}
+
+.books-page-header p {
+    margin: 7px 0 0;
+
+    color: var(--text-secondary);
+
+    font-size: 15px;
+
+    text-align: left;
+}
+
+
+/* ==========================================
+   ADD BOOK BUTTON
+========================================== */
+
+.add-book-btn {
+    border: none;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    padding: 11px 18px;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.add-book-btn:hover {
+    opacity: 0.9;
+}
+
+
+/* ==========================================
+   ERROR
+========================================== */
+
+.books-error {
+    background: #fef2f2;
+    color: #b91c1c;
+
+    border: 1px solid #fecaca;
+
+    padding: 12px 16px;
+
+    border-radius: 9px;
+
+    margin-bottom: 20px;
+
+    text-align: left;
+}
+
+html[data-theme="dark"] .books-error {
+    background: #3b1f24;
+    color: #fca5a5;
+    border-color: #7f1d1d;
+}
+
+
+/* ==========================================
+   TOOLBAR
+========================================== */
+
+.books-toolbar {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    gap: 20px;
+}
+
+.search-box {
+    width: 450px;
+    max-width: 100%;
+
+    height: 44px;
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 14px;
+
+    color: var(--text-secondary);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.search-box:focus-within {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(124, 58, 237, 0.10);
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+
+    width: 100%;
+
+    font-size: 14px;
+
+    background: transparent;
+
+    color: var(--text-primary);
+}
+
+.search-box input::placeholder {
+    color: var(--text-muted);
+}
+
+.books-count {
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   FORM CARD
+========================================== */
+
+.book-form-card {
+    width: 100%;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 24px;
+
+    margin-bottom: 25px;
+
+    box-shadow: var(--card-shadow);
+
+    text-align: left;
+}
+
+.form-card-header {
+    width: 100%;
+
+    margin-bottom: 18px;
+
+    text-align: left;
+}
+
+.form-card-title {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 9px;
+
+    color: var(--text-primary);
+
+    text-align: left;
+}
+
+.form-card-title > svg {
+    flex-shrink: 0;
+
+    margin-top: 2px;
+}
+
+.form-card-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    text-align: left;
+}
+
+.form-card-title h2 {
+    margin: 0;
+
+    font-size: 19px;
+
+    color: var(--text-primary);
+
+    text-align: left;
+}
+
+.form-card-heading p {
+    margin: 6px 0 0;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    text-align: left;
+}
+
+
+/* ==========================================
+   BOOK LIST CARD
+========================================== */
+
+.books-list-card {
+    width: 100%;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 24px;
+
+    box-shadow: var(--card-shadow);
+
+    text-align: left;
+}
+
+
+/* When displaying search results */
+
+.search-results-card {
+    margin-top: 0;
+}
+
+
+/* ==========================================
+   BOOK LIST HEADER
+========================================== */
+
+.books-list-header {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 20px;
+
+    color: var(--text-secondary);
+
+    text-align: left;
+}
+
+.books-list-header > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    text-align: left;
+}
+
+.books-list-header h2 {
+    margin: 0;
+
+    font-size: 20px;
+
+    color: var(--text-primary);
+
+    text-align: left;
+}
+
+.books-list-header p {
+    margin: 5px 0 0;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    text-align: left;
+}
+
+
+/* ==========================================
+   EMPTY STATE
+========================================== */
+
+.books-empty {
+    min-height: 260px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: var(--text-muted);
+}
+
+.books-empty h3 {
+    margin: 15px 0 5px;
+
+    color: var(--text-primary);
+
+    font-size: 18px;
+}
+
+.books-empty p {
+    margin: 0;
+
+    max-width: 450px;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   LOADING
+========================================== */
+
+.books-loading {
+    min-height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text-secondary);
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 800px) {
+
+    .books-page-header {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .books-toolbar {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .search-box {
+        width: auto;
+    }
+
+    .books-count {
+        align-self: flex-start;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .books-page-header {
+        flex-direction: column;
+    }
+
+    .add-book-btn {
+        width: 100%;
+    }
+
+    .book-form-card,
+    .books-list-card {
+        padding: 16px;
+    }
+}
