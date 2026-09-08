@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Eye, EyeOff, BookOpen, Check } from "lucide-react";
@@ -83,40 +84,44 @@ function Register() {
             setLoading(true);
             setServerError("");
 
+            const API_URL = import.meta.env.VITE_API_URL;
+
+            if (!API_URL) {
+                throw new Error(
+                    "API URL is not configured. Check your frontend .env file."
+                );
+            }
+
             const response = await axios.post(
-                "http://localhost:5000/api/auth/register",
+                `${API_URL}/api/auth/register`,
                 {
-                    name: formData.name,
-                    email: formData.email,
+                    name: formData.name.trim(),
+                    email: formData.email.trim(),
                     password: formData.password,
                 }
             );
 
-            // Store token received from backend
             localStorage.setItem(
                 "token",
                 response.data.token
             );
 
-            // Store user information
             localStorage.setItem(
                 "user",
                 JSON.stringify(response.data.user)
             );
 
-            // Go directly to dashboard
             navigate("/dashboard");
 
         } catch (error) {
-            console.error(
-                "Registration error:",
-                error
-            );
+            console.error("Registration error:", error);
 
             if (error.response?.data?.message) {
                 setServerError(
                     error.response.data.message
                 );
+            } else if (error.message) {
+                setServerError(error.message);
             } else {
                 setServerError(
                     "Unable to create account. Please try again."
@@ -133,7 +138,7 @@ function Register() {
 
             <div className="register-container">
 
-                {/* Left Brand Section */}
+                {/* Left Side */}
                 <div className="register-brand-section">
 
                     <div className="register-brand">
@@ -213,7 +218,7 @@ function Register() {
 
                 </div>
 
-                {/* Right Form Section */}
+                {/* Right Side */}
                 <div className="register-form-section">
 
                     <div className="register-form-container">
@@ -238,7 +243,7 @@ function Register() {
 
                         <form onSubmit={handleSubmit}>
 
-                            {/* Name */}
+                            {/* Full Name */}
                             <div className="register-form-group">
 
                                 <label htmlFor="name">

@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import {
     BookOpen,
@@ -40,16 +39,16 @@ function Dashboard() {
     // ==========================================
 
     const CATEGORY_COLORS = [
-        "#7C3AED", // Purple
-        "#EC4899", // Pink
-        "#3B82F6", // Blue
-        "#10B981", // Green
-        "#F59E0B", // Amber
-        "#EF4444", // Red
-        "#06B6D4", // Cyan
-        "#8B5CF6", // Violet
-        "#F97316", // Orange
-        "#14B8A6"  // Teal
+        "#7C3AED",
+        "#EC4899",
+        "#3B82F6",
+        "#10B981",
+        "#F59E0B",
+        "#EF4444",
+        "#06B6D4",
+        "#8B5CF6",
+        "#F97316",
+        "#14B8A6"
     ];
 
 
@@ -70,10 +69,15 @@ function Dashboard() {
                     return;
                 }
 
+                const API_URL = import.meta.env.VITE_API_URL;
 
-                // Fetch dashboard statistics
+
+                // ==========================================
+                // FETCH DASHBOARD STATISTICS
+                // ==========================================
+
                 const statsResponse = await fetch(
-                    "http://localhost:5000/api/books/stats",
+                    `${API_URL}/api/books/stats`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`
@@ -93,9 +97,12 @@ function Dashboard() {
                     await statsResponse.json();
 
 
-                // Fetch category statistics
+                // ==========================================
+                // FETCH CATEGORY STATISTICS
+                // ==========================================
+
                 const categoryResponse = await fetch(
-                    "http://localhost:5000/api/books/category-stats",
+                    `${API_URL}/api/books/category-stats`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`
