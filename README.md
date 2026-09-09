@@ -312,6 +312,4 @@ Through this project, I gained hands-on experience with:
 
 **Kanak Ramteke**
 
----
 
-⭐ If you like this project, consider giving the repository a star!
