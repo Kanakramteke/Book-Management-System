@@ -4,6 +4,7 @@ A full-stack **Book Management System** that allows users to securely manage the
 
 The application is built using the **MERN stack** with JWT authentication and is fully deployed online.
 
+
 ---
 
 ## 🚀 Live Demo
